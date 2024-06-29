@@ -7,7 +7,12 @@ function Skills() {
 
   return (
     <>
-      <Wrapper className="skills wrapper bottom-border ">
+      <Wrapper
+        className="skills wrapper bottom-border "
+        data-aos="fade-down"
+        data-aos-delay="100"
+        data-aos-duration="1500"
+      >
         <h2 className="projects__headline header-xl contact__text">Skills</h2>
         <Wrapper className={`${class1} ${class2}`}>
           {data.map((record) => (
@@ -59,12 +64,12 @@ const data = [
   {
     id: 7,
     title: "NodeJS",
-    skillDesc: "4 Months Experience",
+    skillDesc: "1 Year Experience",
   },
   {
     id: 8,
     title: "MongoDB",
-    skillDesc: "4 Months Experience",
+    skillDesc: "1 Year Experience",
   },
   {
     id: 9,

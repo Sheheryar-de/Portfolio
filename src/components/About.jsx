@@ -7,8 +7,19 @@ function About() {
   return (
     <>
       <Wrapper className="wrapper bottom-border about__me">
-        <img src={Image} height={700} />
-        <Wrapper className="about__wrapper">
+        <img
+          src={Image}
+          height={700}
+          data-aos="fade-up-right"
+          data-aos-delay="100"
+          data-aos-duration="1500"
+        />
+        <Wrapper
+          className="about__wrapper"
+          data-aos="fade-down-left"
+          data-aos-delay="100"
+          data-aos-duration="1500"
+        >
           <h2 className="header__about contact__text">About</h2>
           <p className="about__description">
             Hello, I&apos;m{" "}
@@ -34,7 +45,7 @@ function About() {
             and delivering top-notch projects with satisfaction.
           </p>
           <p className="contact__info">
-            <FaWhatsapp style={{ fontSize: "30px" }} /> +923248422169
+            <FaWhatsapp style={{ fontSize: "30px" }} /> +92-324-8422169
           </p>
           <p className="contact__info">
             <CiMail style={{ fontSize: "30px" }} /> sheheryar701@gmail.com

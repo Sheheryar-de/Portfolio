@@ -44,7 +44,13 @@ function Contact() {
   };
 
   return (
-    <Wrapper id="contact" className="contact bg-less-dark">
+    <Wrapper
+      id="contact"
+      className="contact bg-less-dark"
+      data-aos="zoom-in-up"
+      data-aos-delay="100"
+      data-aos-duration="1500"
+    >
       <Wrapper className="wrapper contact__wrapper bottom-border">
         <Wrapper className="contact__text">
           <h2 className="contact__headline header-xl">Contact</h2>
