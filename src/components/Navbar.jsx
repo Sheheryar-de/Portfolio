@@ -45,58 +45,52 @@ function Navbar() {
             >
               SHEHERYAR AHMED!
             </Link>
-
             <div
-              ref={githubRef}
-              className="header__social"
+              className="links-class"
               data-aos="fade-left"
               data-aos-delay="100"
               data-aos-duration="1500"
             >
-              <Link
-                className="header__social"
-                href="https://github.com/Sheheryar-de"
-                target="_blank"
-              >
-                <FaGithub
-                  color="white"
-                  style={{ width: "30", height: "30" }}
-                  title="GitHub"
-                />
-              </Link>
-            </div>
+              <div ref={githubRef} className="header__social">
+                <Link
+                  className="header__social"
+                  href="https://github.com/Sheheryar-de"
+                  target="_blank"
+                >
+                  <FaGithub
+                    color="white"
+                    style={{ width: "30", height: "30" }}
+                    title="GitHub"
+                  />
+                </Link>
+              </div>
 
-            <div
-              ref={linkedinRef}
-              className="header__social"
-              data-aos="fade-left"
-              data-aos-delay="100"
-              data-aos-duration="1500"
-            >
-              <Link
-                href="https://www.linkedin.com/in/sheheryar-ahmad-6a1b6517a/"
-                target="_blank"
-                className="header__social"
-              >
-                <FaLinkedin
-                  color="white"
-                  style={{ width: "30", height: "30" }}
-                  title="LinkedIn"
-                />
-              </Link>
-            </div>
-            <div
-              ref={downloadRef}
-              className="header__social"
-              data-aos="fade-left"
-            >
-              <Link href="" onClick={handleDownload} className="header__social">
-                <FaCloudDownloadAlt
-                  color="white"
-                  style={{ width: "30", height: "30" }}
-                  title="Download Resume!"
-                />
-              </Link>
+              <div ref={linkedinRef} className="header__social">
+                <Link
+                  href="https://www.linkedin.com/in/sheheryar-ahmad-6a1b6517a/"
+                  target="_blank"
+                  className="header__social"
+                >
+                  <FaLinkedin
+                    color="white"
+                    style={{ width: "30", height: "30" }}
+                    title="LinkedIn"
+                  />
+                </Link>
+              </div>
+              <div ref={downloadRef} className="header__social">
+                <Link
+                  href=""
+                  onClick={handleDownload}
+                  className="header__social"
+                >
+                  <FaCloudDownloadAlt
+                    color="white"
+                    style={{ width: "30", height: "30" }}
+                    title="Download Resume!"
+                  />
+                </Link>
+              </div>
             </div>
           </Wrapper>
         </Wrapper>

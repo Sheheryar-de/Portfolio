@@ -179,7 +179,7 @@ svg {
   justify-content: center;
   transition: 0.2s;
   height: 50px;
-  width: 50px;
+  width: 60px;
 }
 .header__social > svg > path {
   transition: fill var(--transition);
@@ -187,6 +187,13 @@ svg {
 
 .header__social:hover > svg > path {
   fill: var(--accent);
+}
+
+.links-class {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 @media (min-width: 37.5em) {
