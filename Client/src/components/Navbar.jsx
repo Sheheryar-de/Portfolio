@@ -22,11 +22,11 @@ function Navbar() {
   //download resume
   const handleDownload = (event) => {
     event.preventDefault();
-    const resumePath = "../resume/Resume.pdf";
+    const resumePath = "../resume/resume.pdf";
 
     const link = document.createElement("a");
     link.href = resumePath;
-    link.setAttribute("download", "Resume.pdf");
+    link.setAttribute("download", "resume.pdf");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
