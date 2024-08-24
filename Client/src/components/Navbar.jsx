@@ -22,7 +22,7 @@ function Navbar() {
   //download resume
   const handleDownload = (event) => {
     event.preventDefault();
-    const resumePath = "../resume/resume.pdf";
+    const resumePath = "/resume.pdf";
 
     const link = document.createElement("a");
     link.href = resumePath;
