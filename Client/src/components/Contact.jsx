@@ -19,7 +19,7 @@ function Contact() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/send-email",
+        "https://portfolio-backend-zeta-cyan.vercel.app/send-email",
         formData
       );
       setMessage("Your message has been sent successfully!");
