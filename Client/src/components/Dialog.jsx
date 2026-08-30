@@ -1,49 +1,67 @@
 import { IoIosCloseCircleOutline } from "react-icons/io";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import PropTypes from "prop-types";
 
 const Dialog = ({ isOpen, onClose, project, message, icon }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="dialog">
-      <dialog open={isOpen} className="dialog-container">
-        <div className="close-btn" onClick={onClose}>
-          <IoIosCloseCircleOutline size={24} />
-        </div>
+    <div className="dialog" onClick={onClose}>
+      <dialog
+        open={isOpen}
+        className="dialog-container"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          type="button"
+          className="close-btn"
+          onClick={onClose}
+          aria-label="Close"
+        >
+          <IoIosCloseCircleOutline size={28} />
+        </button>
+
         <div className="dialog-desc">
           {!project && icon && <div className="icon-container">{icon}</div>}
-          <h2>{message}</h2>
+
+          {!project && <h2>{message}</h2>}
+
           {project && (
             <>
+              <p className="dialog-label">PROJECT</p>
+
               <h2>{project.title}</h2>
+
               <p>{project.desc}</p>
+
               <div className="languages">
-                <p>Tech-Stack: &nbsp;</p>
-                <span>
-                  {project.lang.map((record, index) => (
-                    <span key={index}>{record}, </span>
+                <p>Tech Stack:</p>
+
+                <div>
+                  {project.lang.map((technology) => (
+                    <span key={technology}>{technology} </span>
                   ))}
-                </span>
+                </div>
               </div>
-              <div className="contact__control" style={{ marginTop: "10px" }}>
+
+              <div className="dialog-actions">
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaGithub />
+                  View Source
+                </a>
+
                 <a
                   href={project.path}
                   target="_blank"
-                  className="underline"
-                  style={{
-                    backgroundColor: "black",
-                    padding: "6px 10px",
-                    marginRight: "15px",
-                  }}
+                  rel="noopener noreferrer"
                 >
-                  View Source
+                  <FaExternalLinkAlt />
+                  Live Demo
                 </a>
-                {/* <a
-                  className="underline"
-                  style={{ backgroundColor: "black", padding: "6px 10px" }}
-                >
-                  Visit Website
-                </a> */}
               </div>
             </>
           )}
@@ -53,8 +71,6 @@ const Dialog = ({ isOpen, onClose, project, message, icon }) => {
   );
 };
 
-export default Dialog;
-
 Dialog.propTypes = {
   message: PropTypes.string,
   icon: PropTypes.element,
@@ -63,7 +79,10 @@ Dialog.propTypes = {
   project: PropTypes.shape({
     title: PropTypes.string,
     desc: PropTypes.string,
-    lang: PropTypes.array,
+    lang: PropTypes.arrayOf(PropTypes.string),
+    github: PropTypes.string,
     path: PropTypes.string,
   }),
 };
+
+export default Dialog;
